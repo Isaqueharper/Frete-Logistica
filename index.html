@@ -71,10 +71,18 @@
             <tbody id="produtos-list">
                 <!-- Produtos com dimensões e peso fixos -->
                 <tr>
-                    <td>Sacola Ecobag</td>
+                    <td>Ecobag Lona</td>
                     <td>39 x 37 x 1,5</td>
-                    <td>400g</td>
-                    <td><input type="number" id="ecobag-quantidade" value="0" /></td>
+                    <td>220g</td>
+                    <td><input type="number" id="ecobag-Lona" value="0" /></td>
+                    <td><span id="ecobag-volume">2176.5</span></td>
+                    <td><span id="ecobag-peso"></span></td>
+                </tr>
+                 <tr>
+                    <td>Ecobag Curvin</td>
+                    <td>39 x 37 x 1,5</td>
+                    <td>410g</td>
+                    <td><input type="number" id="ecobag-Curvin" value="0" /></td>
                     <td><span id="ecobag-volume">2176.5</span></td>
                     <td><span id="ecobag-peso"></span></td>
                 </tr>
@@ -233,7 +241,6 @@
 
     <script>
         const volumeDaCaixa = 40 * 40 * 40; // Volume da caixa de envio (64.000 cm³)
-
         // Função para calcular o volume de um produto com base nas suas dimensões fixas
         function calcularVolumeProduto(largura, altura, comprimento) {
             return largura * altura * comprimento;
@@ -246,7 +253,8 @@
 
             // Produtos e suas dimensões fixas
             const produtos = [
-                { id: "ecobag", volume: 2176.5, peso: 400, quantidade: document.getElementById("ecobag-quantidade").value },
+                { id: "ecobag Lona", volume: 2176.5, peso: 220, quantidade: document.getElementById("ecobag-Lona").value },
+                { id: "ecobag Curvin", volume: 2176.5, peso: 410, quantidade: document.getElementById("ecobag-Curvin").value },
                 { id: "caneca", volume: 912, peso: 350, quantidade: document.getElementById("caneca-quantidade").value },
                 { id: "necessaire", volume: 765, peso: 150, quantidade: document.getElementById("necessaire-quantidade").value },
                 { id: "estojo", volume: 294, peso: 50, quantidade: document.getElementById("estojo-quantidade").value },
