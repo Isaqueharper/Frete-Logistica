@@ -3,22 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculo Volumes/Frete </title>
-
-
+    <title>Calculadora de Volumes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         body {
-            background-color: bisque;
-            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            font-family: 'Roboto', sans-serif;
             padding: 20px;
         }
         .container {
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         h1 {
             text-align: center;
+            color: #1a73e8; /* Azul do logo do chat */
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
         table {
             width: 100%;
@@ -26,37 +34,49 @@
             border-collapse: collapse;
         }
         table, th, td {
-            border: 1px solid #313030;
+            border: 1px solid #ddd;
         }
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: center;
+        }
+        th {
+            background-color: #1a73e8; /* Azul do logo do chat */
+            color: white;
         }
         input[type="number"] {
             width: 80px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
         button {
             display: block;
             margin: 20px auto;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #1a73e8; /* Azul do logo do chat */
             color: white;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            font-size: 1em;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #1557b0; /* Tom mais escuro do azul */
         }
-        footer{
-            padding-top: 140px;
+        .icon {
+            margin-right: 8px;
         }
-        
+        footer {
+            padding-top: 20px;
+            text-align: center;
+            color: #777;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Calculadora de Volumes/Frete</h1>
-
+        <h1><i class="fas fa-calculator icon"></i>Calculadora de Volumes</h1>
         <table>
             <thead>
                 <tr>
@@ -65,258 +85,224 @@
                     <th>Peso (gramas)</th>
                     <th>Quantidade</th>
                     <th>Volume do Produto (cm³)</th>
-                    <th>ADD 1KL por CX</th>
                 </tr>
             </thead>
             <tbody id="produtos-list">
-                <!-- Produtos com dimensões e peso fixos -->
                 <tr>
-                    <td>Ecobag Lona</td>
+                    <td><i class="fas fa-shopping-bag icon"></i>Ecobag Lona</td>
                     <td>39 x 37 x 1,5</td>
                     <td>220g</td>
                     <td><input type="number" id="ecobag-Lona" value="0" /></td>
                     <td><span id="ecobag-volume">2176.5</span></td>
-                    <td><span id="ecobag-peso"></span></td>
                 </tr>
-                 <tr>
-                    <td>Ecobag Curvin / Tênis</td>
+                <tr>
+                    <td><i class="fas fa-shopping-bag icon"></i>Ecobag Curvin / Tênis</td>
                     <td>39 x 37 x 1,5</td>
                     <td>410g</td>
                     <td><input type="number" id="ecobag-Curvin" value="0" /></td>
                     <td><span id="ecobag-volume">2176.5</span></td>
-                    <td><span id="ecobag-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Caneca</td>
+                    <td><i class="fas fa-mug-hot icon"></i>Caneca</td>
                     <td>12 x 8 x 9,5</td>
                     <td>370g</td>
                     <td><input type="number" id="caneca-quantidade" value="0" /></td>
                     <td><span id="caneca-volume">912</span></td>
-                    <td><span id="caneca-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Necessaire Retangular</td>
+                    <td><i class="fas fa-briefcase icon"></i>Necessaire Retangular</td>
                     <td>22,5 x 17 x 2</td>
                     <td>150g</td>
                     <td><input type="number" id="necessaire-quantidade" value="0" /></td>
                     <td><span id="necessaire-volume">765</span></td>
-                    <td><span id="necessaire-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Estojo</td>
+                    <td><i class="bi bi-pencil-fill"></i>Estojo</td>
                     <td>21 x 14 x 1</td>
                     <td>50g</td>
                     <td><input type="number" id="estojo-quantidade" value="0" /></td>
                     <td><span id="estojo-volume">294</span></td>
-                    <td><span id="estojo-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Almofada Quadrada</td>
+                    <td><i class="fas fa-couch icon"></i>Almofada Quadrada</td>
                     <td>35 x 35 x 3</td>
                     <td>150g</td>
                     <td><input type="number" id="Almofada-quantidade" value="0" /></td>
-                    <td><span id="Almofada-volume">294</span></td>
-                    <td><span id="Almofada-peso"></span></td>
+                    <td><span id="Almofada-volume">3675</span></td>
                 </tr>
                 <tr>
-                    <td>Shoulder Bag</td>
+                    <td><i class="fas fa-bag-shopping icon"></i>Shoulder Bag</td>
                     <td>22 x 21 x 4</td>
                     <td>150g</td>
                     <td><input type="number" id="shoulder-bag-quantidade" value="0" /></td>
                     <td><span id="shoulder-bag-volume">1848</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
                 </tr>
-                 <tr>
-                    <td>Almofada Formato</td>
+                <tr>
+                    <td><i class="fas fa-couch icon"></i>Almofada Formato</td>
                     <td>37 x 30 x 7</td>
                     <td>277g</td>
                     <td><input type="number" id="Almofada-Formato" value="0" /></td>
                     <td><span id="Almofada-Formato-volume">7770</span></td>
-                    <td><span id="Almofada-Formato-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Porta Pipoca</td>
+                    <td><i class="bi bi-bucket-fill"></i>Porta Pipoca</td>
                     <td>36 x 30 x 17</td>
                     <td>530g</td>
                     <td><input type="number" id="Porta-Pipoca" value="0" /></td>
-                    <td><span id="shoulder-bag-volume">18360</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Porta-Pipoca-volume">18360</span></td>
                 </tr>
-                  <tr>
-                    <td>Almofada Rosto</td>
+                <tr>
+                    <td><i class="fas fa-couch icon"></i>Almofada Rosto</td>
                     <td>24 x 15 x 9</td>
                     <td>260g</td>
                     <td><input type="number" id="Almofada-Rosto" value="0" /></td>
-                    <td><span id="shoulder-bag-volume">3240</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Almofada-Rosto-volume">3240</span></td>
                 </tr>
                 <tr>
-                    <td>Copo Acrilico</td>
+                    <td><i class="fas fa-glass-whiskey icon"></i>Copo Acrílico</td>
                     <td>23 x 10 x 10</td>
                     <td>250g</td>
                     <td><input type="number" id="Copo-Acrilico" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 2300</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Copo-Acrilico-volume">2300</span></td>
                 </tr>
                 <tr>
-                    <td>Almofada Pescoço</td>
+                    <td><i class="fas fa-couch icon"></i>Almofada Pescoço</td>
                     <td>27 x 15 x 10</td>
                     <td>330g</td>
                     <td><input type="number" id="Almofada-Pescoço" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 4050</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Almofada-Pescoço-volume">4050</span></td>
                 </tr>
                 <tr>
-                    <td>Mochila Infantil</td>
+                    <td><i class="fas fa-baby-carriage icon"></i>Mochila Infantil</td>
                     <td>32 x 28 x 3</td>
                     <td>335g</td>
                     <td><input type="number" id="Mochila-infantil" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 2688</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Mochila-infantil-volume">2688</span></td>
                 </tr>
                 <tr>
-                    <td>Mochila Grande / Tênis</td>
+                    <td><i class="bi bi-backpack2-fill"></i>Mochila Grande / Tênis</td>
                     <td>46 x 40 x 3</td>
                     <td>500g</td>
                     <td><input type="number" id="Mochila-Grande" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 5520</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Mochila-Grande-volume">5520</span></td>
                 </tr>
                 <tr>
-                    <td>Kit Xicara</td>
+                    <td><i class="fas fa-mug-hot icon"></i>Kit Xícara</td>
                     <td>11 x 10 x 11</td>
                     <td>550g</td>
                     <td><input type="number" id="Kit-Xicara" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 1210</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Kit-Xicara-volume">1210</span></td>
                 </tr>
                 <tr>
-                    <td>Necessaire Visor</td>
+                    <td><i class="fas fa-briefcase icon"></i>Necessaire Visor</td>
                     <td>25 x 16 x 3</td>
                     <td>180g</td>
                     <td><input type="number" id="Necessaire-Visor" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 1200</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Necessaire-Visor-volume">1200</span></td>
                 </tr>
                 <tr>
-                    <td>Garrafa</td>
+                    <td><i class="bi bi-cup-straw"></i>Garrafa</td>
                     <td>23 x 8 x 8</td>
                     <td>170g</td>
                     <td><input type="number" id="Garrafa" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 1472</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Garrafa-volume">1472</span></td>
                 </tr>
                 <tr>
-                    <td>Almofada Pet</td>
+                    <td><i class="fas fa-paw icon"></i>Almofada Pet</td>
                     <td>21 x 10 x 3</td>
                     <td>130g</td>
                     <td><input type="number" id="Almofada-Pet" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 630</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Almofada-Pet-volume">630</span></td>
                 </tr>
                 <tr>
-                    <td>10-Copo Buck</td>
+                    <td><i class="fas fa-glass-whiskey icon"></i>10-Copo Buck</td>
                     <td>27 x 9 x 9</td>
                     <td>460g</td>
                     <td><input type="number" id="Copo-Buck" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 2187</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
+                    <td><span id="Copo-Buck-volume">2187</span></td>
                 </tr>
                 <tr>
-                    <td>Lancheira</td>
+                    <td><i class="fas fa-utensils icon"></i>Lancheira</td>
                     <td>19 x 14 x 16</td>
                     <td>129g</td>
                     <td><input type="number" id="Lancheira" value="0" /></td>
-                    <td><span id="shoulder-bag-volume"> 4256</span></td>
-                    <td><span id="shoulder-bag-peso"></span></td>
-                </tr>
-                 <tr>
-                    <td>Necessaire Trip</td>
-                    <td>22 x 17 x 3</td>
-                    <td>260g</td>
-                    <td><input type="number" id="Necessaire Trip" value="0" /></td>
-                    <td><span id="Necessaire Trip-volume"> 1122</span></td>
-                    <td><span id="Necessaire Trip-peso"></span></td>
+                    <td><span id="Lancheira-volume">4256</span></td>
                 </tr>
                 <tr>
-                    <td>Bolsa Esportiva</td>
+                    <td><i class="fas fa-briefcase icon"></i>Necessaire Trip</td>
+                    <td>22 x 17 x 3</td>
+                    <td>260g</td>
+                    <td><input type="number" id="Necessaire-Trip" value="0" /></td>
+                    <td><span id="Necessaire-Trip-volume">1122</span></td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-bag-shopping icon"></i>Bolsa Esportiva</td>
                     <td>47 x 30 x 3</td>
                     <td>430g</td>
-                    <td><input type="number" id="Bolsa Esportiva" value="0" /></td>
-                    <td><span id="Bolsa Esportiva-volume"> 4230</span></td>
-                    <td><span id="Bolsa Esportiva-peso"></span></td>
+                    <td><input type="number" id="Bolsa-Esportiva" value="0" /></td>
+                    <td><span id="Bolsa-Esportiva-volume">4230</span></td>
                 </tr>
             </tbody>
         </table>
-
-        <button onclick="calcularCaixas()">Calcular Quantidade de Caixas</button>
-
+        <button onclick="calcularCaixas()"><i class="fas fa-calculator icon"></i>Calcular Quantidade de Caixas</button>
         <h3>Resultado:</h3>
         <p id="resultado"></p>
     </div>
+    <footer>
+        <i class="bi bi-award-fill"></i> Todos os Direitos Reservados <br> &copy; Isaque Gonçalves Da Silva, 2025
+    </footer>
 
     <script>
         const volumeDaCaixa = 40 * 40 * 40; // Volume da caixa de envio (64.000 cm³)
-        // Função para calcular o volume de um produto com base nas suas dimensões fixas
-        function calcularVolumeProduto(largura, altura, comprimento) {
-            return largura * altura * comprimento;
-        }
 
-        // Função para calcular e exibir os resultados
         function calcularCaixas() {
             let volumeTotal = 0;
             let pesoTotal = 0;
 
-            // Produtos e suas dimensões fixas
             const produtos = [
-                { id: "ecobag Lona", volume: 2176.5, peso: 220, quantidade: document.getElementById("ecobag-Lona").value },
-                { id: "ecobag Curvin", volume: 2176.5, peso: 410, quantidade: document.getElementById("ecobag-Curvin").value },
-                { id: "caneca", volume: 912, peso: 370, quantidade: document.getElementById("caneca-quantidade").value },
-                { id: "necessaire", volume: 765, peso: 150, quantidade: document.getElementById("necessaire-quantidade").value },
-                { id: "estojo", volume: 294, peso: 50, quantidade: document.getElementById("estojo-quantidade").value },
-                { id: "Almofada", volume: 3675, peso: 150, quantidade: document.getElementById("Almofada-quantidade").value },
-                { id: "shoulder-bag", volume: 1848, peso: 150, quantidade: document.getElementById("shoulder-bag-quantidade").value },
-                { id: "Almofada Formato", volume: 7770, peso: 277, quantidade: document.getElementById("Almofada-Formato").value },
-                { id: "Porta Pipoca", volume: 18360, peso: 530, quantidade: document.getElementById("Porta-Pipoca").value },
-                { id: "Almofada Rosto", volume: 3240, peso: 260, quantidade: document.getElementById("Almofada-Rosto").value },
-                { id: "Copo Acrilico", volume:  2300, peso: 250, quantidade: document.getElementById("Copo-Acrilico").value },
-                { id: "Almofada Pescoço", volume:  4050, peso: 330, quantidade: document.getElementById("Almofada-Pescoço").value },
-                { id: "Mochila Infantil", volume:  2688, peso: 335, quantidade: document.getElementById("Mochila-infantil").value },
-                { id: "Mochila adulta", volume:  5520, peso: 500, quantidade: document.getElementById("Mochila-Grande").value },
-                { id: "Kit Xicara", volume:  1210, peso: 550, quantidade: document.getElementById("Kit-Xicara").value },
-                { id: "Necessaire com Visor", volume:  1200, peso: 180, quantidade: document.getElementById("Necessaire-Visor").value },
-                { id: "Garrafa", volume:  1472, peso: 170, quantidade: document.getElementById("Garrafa").value },
-                { id: "Almofada Pet", volume:  630, peso: 130, quantidade: document.getElementById("Almofada-Pet").value },
-                { id: "Copo Buck", volume:  2187, peso: 460, quantidade: document.getElementById("Copo-Buck").value },
-                { id: "Lancheira", volume:  4256, peso: 129, quantidade: document.getElementById("Lancheira").value },
-                { id: "Bolsa Esportiva", volume:  4230, peso: 430, quantidade: document.getElementById("Bolsa Esportiva").value },
-                { id: "Necessaire Trip", volume:  1122, peso: 260, quantidade: document.getElementById("Necessaire Trip").value },
+                { id: "ecobag-Lona", volume: 2176.5, peso: 220, quantidade: document.getElementById("ecobag-Lona").value },
+                { id: "ecobag-Curvin", volume: 2176.5, peso: 410, quantidade: document.getElementById("ecobag-Curvin").value },
+                { id: "caneca-quantidade", volume: 912, peso: 370, quantidade: document.getElementById("caneca-quantidade").value },
+                { id: "necessaire-quantidade", volume: 765, peso: 150, quantidade: document.getElementById("necessaire-quantidade").value },
+                { id: "estojo-quantidade", volume: 294, peso: 50, quantidade: document.getElementById("estojo-quantidade").value },
+                { id: "Almofada-quantidade", volume: 3675, peso: 150, quantidade: document.getElementById("Almofada-quantidade").value },
+                { id: "shoulder-bag-quantidade", volume: 1848, peso: 150, quantidade: document.getElementById("shoulder-bag-quantidade").value },
+                { id: "Almofada-Formato", volume: 7770, peso: 277, quantidade: document.getElementById("Almofada-Formato").value },
+                { id: "Porta-Pipoca", volume: 18360, peso: 530, quantidade: document.getElementById("Porta-Pipoca").value },
+                { id: "Almofada-Rosto", volume: 3240, peso: 260, quantidade: document.getElementById("Almofada-Rosto").value },
+                { id: "Copo-Acrilico", volume: 2300, peso: 250, quantidade: document.getElementById("Copo-Acrilico").value },
+                { id: "Almofada-Pescoço", volume: 4050, peso: 330, quantidade: document.getElementById("Almofada-Pescoço").value },
+                { id: "Mochila-infantil", volume: 2688, peso: 335, quantidade: document.getElementById("Mochila-infantil").value },
+                { id: "Mochila-Grande", volume: 5520, peso: 500, quantidade: document.getElementById("Mochila-Grande").value },
+                { id: "Kit-Xicara", volume: 1210, peso: 550, quantidade: document.getElementById("Kit-Xicara").value },
+                { id: "Necessaire-Visor", volume: 1200, peso: 180, quantidade: document.getElementById("Necessaire-Visor").value },
+                { id: "Garrafa", volume: 1472, peso: 170, quantidade: document.getElementById("Garrafa").value },
+                { id: "Almofada-Pet", volume: 630, peso: 130, quantidade: document.getElementById("Almofada-Pet").value },
+                { id: "Copo-Buck", volume: 2187, peso: 460, quantidade: document.getElementById("Copo-Buck").value },
+                { id: "Lancheira", volume: 4256, peso: 129, quantidade: document.getElementById("Lancheira").value },
+                { id: "Necessaire-Trip", volume: 1122, peso: 260, quantidade: document.getElementById("Necessaire-Trip").value },
+                { id: "Bolsa-Esportiva", volume: 4230, peso: 430, quantidade: document.getElementById("Bolsa-Esportiva").value },
             ];
 
             produtos.forEach(produto => {
                 if (produto.quantidade > 0) {
                     const volumeTotalProduto = produto.volume * produto.quantidade;
                     const pesoTotalProduto = produto.peso * produto.quantidade;
-    
+
                     volumeTotal += volumeTotalProduto;
                     pesoTotal += pesoTotalProduto;
                 }
             });
-    
+
             const caixasNecessarias = Math.ceil(volumeTotal / volumeDaCaixa);
-    
-            // Converter peso total para quilogramas e gramas
-            const pesoKg = Math.floor(pesoTotal / 1000);
-            const pesoGramas = pesoTotal % 1000;
-    
+            const pesoTotalComCaixas = pesoTotal + (caixasNecessarias * 1000); // Adiciona 1kg por caixa
+            const pesoKg = Math.floor(pesoTotalComCaixas / 1000);
+            const pesoGramas = pesoTotalComCaixas % 1000; 
             document.getElementById("resultado").textContent = 
                 `Você precisará de ${caixasNecessarias} caixa(s). Volume total dos produtos: ${volumeTotal} cm³. Peso total dos produtos: ${pesoKg} kg e ${pesoGramas} g.`;
         }
     </script>
     
-    <center>
-    <footer>
-        Todos os Direitos Reservados <br> &copy; Isaque Gonçalves Da Silva, 2025
-    </footer></center>
+    
 </body>
-</html>
+</html>>
