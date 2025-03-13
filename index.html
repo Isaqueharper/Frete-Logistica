@@ -79,7 +79,7 @@
                     <td><span id="ecobag-peso"></span></td>
                 </tr>
                  <tr>
-                    <td>Ecobag Curvin</td>
+                    <td>Ecobag Curvin / Tênis</td>
                     <td>39 x 37 x 1,5</td>
                     <td>410g</td>
                     <td><input type="number" id="ecobag-Curvin" value="0" /></td>
@@ -175,9 +175,9 @@
                     <td><span id="shoulder-bag-peso"></span></td>
                 </tr>
                 <tr>
-                    <td>Mochila Grande</td>
+                    <td>Mochila Grande / Tênis</td>
                     <td>46 x 40 x 3</td>
-                    <td>430g</td>
+                    <td>500g</td>
                     <td><input type="number" id="Mochila-Grande" value="0" /></td>
                     <td><span id="shoulder-bag-volume"> 5520</span></td>
                     <td><span id="shoulder-bag-peso"></span></td>
@@ -230,6 +230,22 @@
                     <td><span id="shoulder-bag-volume"> 4256</span></td>
                     <td><span id="shoulder-bag-peso"></span></td>
                 </tr>
+                 <tr>
+                    <td>Necessaire Trip</td>
+                    <td>22 x 17 x 3</td>
+                    <td>260g</td>
+                    <td><input type="number" id="Necessaire Trip" value="0" /></td>
+                    <td><span id="Necessaire Trip-volume"> 1122</span></td>
+                    <td><span id="Necessaire Trip-peso"></span></td>
+                </tr>
+                <tr>
+                    <td>Bolsa Esportiva</td>
+                    <td>47 x 30 x 3</td>
+                    <td>430g</td>
+                    <td><input type="number" id="Bolsa Esportiva" value="0" /></td>
+                    <td><span id="Bolsa Esportiva-volume"> 4230</span></td>
+                    <td><span id="Bolsa Esportiva-peso"></span></td>
+                </tr>
             </tbody>
         </table>
 
@@ -266,13 +282,15 @@
                 { id: "Copo Acrilico", volume:  2300, peso: 250, quantidade: document.getElementById("Copo-Acrilico").value },
                 { id: "Almofada Pescoço", volume:  4050, peso: 330, quantidade: document.getElementById("Almofada-Pescoço").value },
                 { id: "Mochila Infantil", volume:  2688, peso: 335, quantidade: document.getElementById("Mochila-infantil").value },
-                { id: "Mochila adulta", volume:  5520, peso: 430, quantidade: document.getElementById("Mochila-Grande").value },
+                { id: "Mochila adulta", volume:  5520, peso: 500, quantidade: document.getElementById("Mochila-Grande").value },
                 { id: "Kit Xicara", volume:  1210, peso: 550, quantidade: document.getElementById("Kit-Xicara").value },
                 { id: "Necessaire com Visor", volume:  1200, peso: 180, quantidade: document.getElementById("Necessaire-Visor").value },
                 { id: "Garrafa", volume:  1472, peso: 170, quantidade: document.getElementById("Garrafa").value },
                 { id: "Almofada Pet", volume:  630, peso: 130, quantidade: document.getElementById("Almofada-Pet").value },
                 { id: "Copo Buck", volume:  2187, peso: 460, quantidade: document.getElementById("Copo-Buck").value },
                 { id: "Lancheira", volume:  4256, peso: 129, quantidade: document.getElementById("Lancheira").value },
+                { id: "Bolsa Esportiva", volume:  4230, peso: 430, quantidade: document.getElementById("Bolsa Esportiva").value },
+                { id: "Necessaire Trip", volume:  1122, peso: 260, quantidade: document.getElementById("Necessaire Trip").value },
             ];
 
             produtos.forEach(produto => {
